@@ -1,18 +1,41 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CldUploadButton,CldImage } from 'next-cloudinary';
+import { CldUploadButton, CldImage } from "next-cloudinary";
+import { useState } from "react";
 
-export function TabsDemo({src}:{src:string}) {
+export function TabsDemo({ src }: { src: string }) {
+  const [prompt, setPrompt] = useState("");
+  const [pendingPrompt, setPendingPrompt] = useState("");
+  const [activeTabs, setActiveTabs] = useState("original");
+
   return (
-    <Tabs defaultValue="original" className="w-full">
-      <TabsList className="grid w-full grid-cols-5">
+    <Tabs
+      defaultValue="original"
+      className="w-full"
+      onValueChange={(value) => setActiveTabs(value)}
+    >
+      <TabsList className="grid w-full grid-cols-6 mb-2">
         <TabsTrigger value="original">Original</TabsTrigger>
         <TabsTrigger value="blur">Blur</TabsTrigger>
         <TabsTrigger value="gray">GrayScale</TabsTrigger>
         <TabsTrigger value="oil">OilPaint</TabsTrigger>
         <TabsTrigger value="improve">Improve</TabsTrigger>
+        <TabsTrigger value="gen-ai">Gen-Ai Fill</TabsTrigger>
       </TabsList>
+
+      {activeTabs === "gen-ai" && (
+        <div className="flex gap-2">
+          <Input
+            className="pt-2 w-fit "
+            value={pendingPrompt}
+            onChange={(e) => setPendingPrompt(e.target.value)}
+          />
+          <Button onClick={() => setPrompt(pendingPrompt)}>Enter</Button>
+        </div>
+      )}
+
       <TabsContent value="original">
         <div className="flex gap-7 items-center justify-center py-4">
           <CldImage
@@ -31,7 +54,7 @@ export function TabsDemo({src}:{src:string}) {
           />
         </div>
       </TabsContent>
-      
+
       <TabsContent value="blur">
         <div className="flex gap-7 items-center justify-center py-4">
           <CldImage
@@ -51,7 +74,7 @@ export function TabsDemo({src}:{src:string}) {
           />
         </div>
       </TabsContent>
-      
+
       <TabsContent value="gray">
         <div className="flex gap-7 items-center justify-center py-4">
           <CldImage
@@ -92,7 +115,6 @@ export function TabsDemo({src}:{src:string}) {
         </div>
       </TabsContent>
 
-      
       <TabsContent value="improve">
         <div className="flex gap-7 items-center justify-center py-4">
           <CldImage
@@ -110,6 +132,30 @@ export function TabsDemo({src}:{src:string}) {
             alt="Description of my image"
             effects={[{ improve: true }]}
           />
+        </div>
+      </TabsContent>
+
+      <TabsContent value="gen-ai">
+        <div className="flex gap-7 items-center justify-center py-8">
+          <CldImage
+            width="250"
+            height="250"
+            src={src}
+            sizes="100vw"
+            alt="Description of my image"
+          />
+          {prompt && (
+            <CldImage
+              width="250"
+              height="250"
+              src={src}
+              sizes="100vw"
+              alt="Description of my image"
+              fillBackground={{
+                prompt,
+              }}
+            />
+          )}
         </div>
       </TabsContent>
     </Tabs>
