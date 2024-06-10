@@ -20,16 +20,16 @@ setSearch(mySearch)
         router.replace(`/gallery?search=${encodeURIComponent(search)}`)
         router.refresh()
         }}>
-      <Label htmlFor="search" className=" pl-4">
+      <Label htmlFor="search" className="pl-5">
              Search 
             </Label>
-            <div className='flex gap-2'>
+            <div className='flex gap-2 pl-4'>
             <Input
               id="search"
               onChange={(e:any)=> setSearch(e.target.value)}
               value={search}
               placeholder="search"
-              className="col-span-3 "
+              className="col-span-4 "
             />
             <Button type='submit'>
                 Search

@@ -16,7 +16,7 @@ const Page = async () => {
         <h2 className="text-2xl font-semibold tracking-tight">Picture Album</h2>
       </div>
 
-      <div className="px-5 py-4 grid grid-cols-3 gap-4">
+      <div className="px-5 py-4 grid grid-cols-1 xl:grid-cols-3 gap-4">
         {folders.map((item, i) => (
           <div key={i}>
             <FolderList folder={item} />

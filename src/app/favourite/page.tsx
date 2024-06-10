@@ -1,8 +1,7 @@
 import cloudinary from "cloudinary";
-import View from "../gallery/view";
 import FavouriteList from "./favouriteList";
 
-export  interface MyImage {
+export interface MyImage {
   public_id: string;
   tags: string[];
 }
@@ -14,15 +13,15 @@ const Page = async () => {
     .max_results(5)
     .with_field("tags")
     .execute()) as { resources: MyImage[] };
-  // console.log(res.resources);
-  // console.log(res);
 
   return (
     <>
       <div className="py-4 px-5 flex items-center justify-between">
         <h2 className="text-2xl font-semibold tracking-tight">Favorite</h2>
       </div>
-        <FavouriteList resources={res.resources}/>
+      <div className="px-5 py-4">
+        <FavouriteList resources={res.resources} />
+      </div>
     </>
   );
 };
