@@ -11,7 +11,7 @@ const Page = async () => {
   };
 
   return (
-    <div>
+    <div className="border-l">
       <div className="py-4 px-5 ">
         <h2 className="text-2xl font-semibold tracking-tight">Picture Album</h2>
       </div>
