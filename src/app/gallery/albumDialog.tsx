@@ -33,7 +33,7 @@ const [open,setOpen]=useState(false)
         <DialogHeader>
           <DialogTitle>Add to Album</DialogTitle>
           <DialogDescription>
-            Add your favourite picture in the Album. Click Add to Album when you're done.
+            Add your favourite picture in the Album. Click Add to Album when you&apos;re done.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">

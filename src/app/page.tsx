@@ -21,7 +21,7 @@ export default function Home() {
         <h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>
           Gallery Gaze
         </h1>
-        <p className="my-4 font-sans text-base">"Gaze At Beauty"</p>
+        <p className="my-4 font-sans text-base">&quot;Gaze At Beauty&quot;</p>
         <p className="my-4 font-sans text-base sm:w-96">
           Every picture carries its own unique and profound meaning, conveying emotions and stories that words alone often cannot express.
         </p>
