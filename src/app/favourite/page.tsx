@@ -19,7 +19,7 @@ const Page = async () => {
       <div className="py-4 px-5 flex items-center justify-between">
         <h2 className="text-2xl font-semibold tracking-tight">Favorite</h2>
       </div>
-      <div className="px-5 py-4">
+      <div className="sm:px-5 py-4">
         <FavouriteList resources={res.resources} />
       </div>
     </>

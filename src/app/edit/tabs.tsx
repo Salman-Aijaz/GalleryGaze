@@ -13,10 +13,10 @@ export function TabsDemo({ src }: { src: string }) {
   return (
     <Tabs
       defaultValue="original"
-      className="w-full"
+      className="w-fit md:w-full"
       onValueChange={(value) => setActiveTabs(value)}
     >
-      <TabsList className="grid w-full grid-cols-6 mb-2">
+      <TabsList className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 mb-2 h-full md:h-10">
         <TabsTrigger value="original">Original</TabsTrigger>
         <TabsTrigger value="blur">Blur</TabsTrigger>
         <TabsTrigger value="gray">GrayScale</TabsTrigger>
@@ -136,7 +136,7 @@ export function TabsDemo({ src }: { src: string }) {
       </TabsContent>
 
       <TabsContent value="gen-ai">
-        <div className="flex gap-7 items-center justify-center py-8">
+        <div className="flex gap-7  justify-center py-8">
           <CldImage
             width="250"
             height="250"

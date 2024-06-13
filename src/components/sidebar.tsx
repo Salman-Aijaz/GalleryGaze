@@ -30,7 +30,7 @@ const Sidebar = () => {
           </h2>
           <div className="grid gap-4">
             <Link href={"/gallery"}>
-              <button className="flex items-center lg:gap-2">
+              <button className="flex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -50,7 +50,7 @@ const Sidebar = () => {
             </Link>
 
             <Link href={"/album"}>
-              <button className="flex items-center lg:gap-2">
+              <button className="flex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -70,7 +70,7 @@ const Sidebar = () => {
             </Link>
 
             <Link href={"/favourite"}>
-              <button className="flex items-center lg:gap-2">
+              <button className="flex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

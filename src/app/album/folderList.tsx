@@ -13,7 +13,7 @@ import Link from 'next/link'
 const FolderList = ({folder}:{folder:FolderType}) => {
   return (
     <div>
-        <Card className="w-[350px]">
+        <Card className=" lg:w-[350px]">
       <CardHeader>
         <CardTitle>{folder.name}</CardTitle>
         <CardDescription>Please click on view button to see the image</CardDescription>
